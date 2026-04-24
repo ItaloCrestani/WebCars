@@ -146,7 +146,7 @@ export function Home() {
             </section>
           </Link>
         )) : (
-          Array.from({length: 2}).map((_, index) => (
+          Array.from({length: 3}).map((_, index) => (
             <section className="w-full h-112" key={index}>
               <Skeleton className="w-full h-full rounded-lg"/>
             </section>
