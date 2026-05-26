@@ -1,3 +1,5 @@
+const CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME
+
 import { useContext, useState, type ChangeEvent } from "react";
 import { Container } from "../../../components/container";
 import { DashboardHeader } from "../../../components/panelheader";
@@ -62,9 +64,9 @@ export function New() {
     data.append("file", image)
     data.append("public_id", uniqueName)
     data.append("upload_preset", "Images")
-    data.append("cloud_name", "dkfltkoj1")
+    data.append("cloud_name", CLOUD_NAME)
 
-    const response = await fetch("https://api.cloudinary.com/v1_1/dkfltkoj1/image/upload", {
+    const response = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
       method: "POST",
       body: data
     })
